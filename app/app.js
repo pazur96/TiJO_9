@@ -1,10 +1,10 @@
 
-var jok e = 'JavaScript walked into a bar....';
-var toldJoke = 'false';
-var $punchline = 'Better watch out for those semi-colons.';
+var joke = "JavaScript walked into a bar....";
+var toldJoke = "false";
+var $punchline = "Better watch out for those semi-colons.";
 
 
-if (told joke === true) {
+if (toldJoke === true) {
     console.log($punchline);
 } else {
     console.log(joke);
@@ -12,16 +12,16 @@ if (told joke === true) {
 
 var forbiddenPlanet;
 var joesFavoriteMovie = forbiddenPlanet;
-var movie_Ticket$ = 9
+var movieTicket$ = 9;
 
 if (movieTicket$ >= 9) {
-    console.log('Too much!");
+    console.log("Too much!");
 } else {
-    console.log('We\'re going to see ' + joesFavoriteMovie);
+    console.log("We're going to see " + joesFavoriteMovie);
 }
 
 var a = 5;
-var b = '5';
+var b = "5";
 var equal;
 
 if (a === b) {
