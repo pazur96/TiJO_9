@@ -1,48 +1,24 @@
 'use strict';
-
 var expect = require('chai').expect;
 var app = require('../app/app');
-
-describe('areaOfTrapezoid', function ()
+describe('calculateDiscount', function ()
 {
-    describe('when "a","b" and "h" are non-negative numbers', function ()
+    describe('when parameters are negative numbers', function ()
     {
-        it('should return area of trapezoid', function ()
+        it('should return false', function ()
         {
-            expect(app.areaOfTrapezoid(2, 2, 2)).to.equal(4);
-            expect(app.areaOfTrapezoid(1, 3, 6)).to.equal(12);
+            expect(app.calculateTicketsPrice(-5, 0, 6)).to.eql(false);
         });
     });
-
-    describe('when "a", "b" or "h" is a negative number', function ()
+    describe('when parameters are correct', function ()
     {
-        it('should return false when "a" is a negative number', function ()
+        it('should calculate ticket price without discount', function ()
         {
-            expect(app.areaOfTrapezoid(-1, 3, 6)).to.equal(false);
+            expect(app.calculateTicketsPrice(5, 0, 6)).to.eql({totalPrice: 30});
         });
-        it('should return false when "b" is a negative number', function ()
+        it('should calculate ticket price with discount', function ()
         {
-            expect(app.areaOfTrapezoid(1, -3, 6)).to.equal(false);
-        });
-        it('should return false when "h" is a negative number', function ()
-        {
-            expect(app.areaOfTrapezoid(1, 3, -6)).to.equal(false);
-        });
-    });
-
-    describe('when "a", "b" or "h" is not a number', function ()
-    {
-        it('should return false when "a" is not a number', function ()
-        {
-            expect(app.areaOfTrapezoid('text', 3, 6)).to.equal(false);
-        });
-        it('should return false when "b" is not a number', function ()
-        {
-            expect(app.areaOfTrapezoid(1, 'text', 6)).to.equal(false);
-        });
-        it('should return false when "h" is not a number', function ()
-        {
-            expect(app.areaOfTrapezoid(1, 3, 'text')).to.equal(false);
+            expect(app.calculateTicketsPrice(5, 2, 6)).to.eql({totalPrice: 24, discount: 6});
         });
     });
 });
